@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 // Ожидается реализация в App.Topics.Events.T4_CustomEvent
 namespace App.Test_.Topics.Events.T4_CustomEvent;

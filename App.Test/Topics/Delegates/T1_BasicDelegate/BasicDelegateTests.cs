@@ -1,6 +1,4 @@
-using System;
-using System.Linq;
-using NUnit.Framework;
+
 
 // Ожидается реализация в App.Topics.Delegates.T1_BasicDelegate
 namespace App.Test_.Topics.Delegates.T1_BasicDelegate;

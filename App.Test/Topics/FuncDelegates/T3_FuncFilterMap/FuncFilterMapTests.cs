@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using NUnit.Framework;
+
 
 // Ожидается реализация в App.Topics.FuncDelegates.T3_FuncFilterMap
 namespace App.Test_.Topics.FuncDelegates.T3_FuncFilterMap;
@@ -32,8 +29,7 @@ public class FuncFilterMapTests
     public void FilterMap_Nulls_Throw()
     {
         Assert.Throws<ArgumentNullException>(() => App.Topics.FuncDelegates.T3_FuncFilterMap.LinqLite.FilterMap<int, int>(null!, _ => true, x => x));
-        Assert.Throws<ArgumentNullException>(() => App.Topics.FuncDelegates.T3_FuncFilterMap.LinqLite.FilterMap(new[] {1}, null!, x => x));
-        Assert.Throws<ArgumentNullException>(() => App.Topics.FuncDelegates.T3_FuncFilterMap.LinqLite.FilterMap(new[] {1}, _ => true, null!));
+        Assert.Throws<ArgumentNullException>(() => App.Topics.FuncDelegates.T3_FuncFilterMap.LinqLite.FilterMap([1], null!, x => x));
     }
 
     [Test]

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using NUnit.Framework;
+using NUnit.Framework.Legacy;
 
 // Ожидается реализация в App.Topics.ActionDelegates.T2_ActionPipeline
 namespace App.Test_.Topics.ActionDelegates.T2_ActionPipeline;
