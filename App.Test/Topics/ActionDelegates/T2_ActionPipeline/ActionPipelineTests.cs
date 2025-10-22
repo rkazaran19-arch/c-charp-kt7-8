@@ -19,7 +19,7 @@ public class ActionPipelineTests
             a, b, c
         );
 
-        CollectionAssert.AreEqual(new[] {"A:x", "B:x", "C:x"}, called);
+        CollectionAssert.AreEqual(new[] { "A:x", "B:x", "C:x" }, called);
         Assert.That(count, Is.EqualTo(3));
     }
 
@@ -39,7 +39,7 @@ public class ActionPipelineTests
 
         var count = App.Topics.ActionDelegates.T2_ActionPipeline.ActionPipeline.InvokeAll("z", a, b!, a);
 
-        CollectionAssert.AreEqual(new[] {"A:z", "A:z"}, called);
+        CollectionAssert.AreEqual(new[] { "A:z", "A:z" }, called);
         Assert.That(count, Is.EqualTo(2));
     }
 
@@ -54,7 +54,7 @@ public class ActionPipelineTests
         var ex = Assert.Throws<InvalidOperationException>(() =>
             App.Topics.ActionDelegates.T2_ActionPipeline.ActionPipeline.InvokeAll("x", a, bad, c));
         Assert.That(ex!.Message, Is.EqualTo("bad"));
-        CollectionAssert.AreEqual(new[] {"A:x"}, called); // C не должен быть вызван
+        CollectionAssert.AreEqual(new[] { "A:x" }, called); // C не должен быть вызван
     }
 
     [Test]
@@ -66,7 +66,7 @@ public class ActionPipelineTests
         var multi = (Action<string>)Delegate.Combine(a, b);
 
         var count = App.Topics.ActionDelegates.T2_ActionPipeline.ActionPipeline.InvokeAll("q", multi);
-        CollectionAssert.AreEqual(new[] {1, 2}, called);
+        CollectionAssert.AreEqual(new[] { 1, 2 }, called);
         Assert.That(count, Is.EqualTo(1)); // вызван один делегат (но внутри — 2 цели)
     }
 }
