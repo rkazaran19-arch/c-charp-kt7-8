@@ -9,11 +9,11 @@ public class FuncFilterMapTests
     [Test]
     public void FilterMap_BasicScenario()
     {
-        var data = new[] {1, 2, 3, 4, 5};
+        var data = new[] { 1, 2, 3, 4, 5 };
         var res = App.Topics.FuncDelegates.T3_FuncFilterMap.LinqLite
             .FilterMap(data, x => x % 2 == 1, x => x * x)
             .ToArray();
-        Assert.That(res, Is.EqualTo(new[] {1, 9, 25}));
+        Assert.That(res, Is.EqualTo(new[] { 1, 9, 25 }));
     }
 
     [Test]
@@ -44,7 +44,7 @@ public class FuncFilterMapTests
         var names = App.Topics.FuncDelegates.T3_FuncFilterMap.LinqLite
             .FilterMap(people, p => p.Age >= 18, p => p.Name)
             .ToArray();
-        Assert.That(names, Is.EqualTo(new[] {"Ann", "Cat"}));
+        Assert.That(names, Is.EqualTo(new[] { "Ann", "Cat" }));
     }
 
     private sealed record Person(string Name, int Age);
