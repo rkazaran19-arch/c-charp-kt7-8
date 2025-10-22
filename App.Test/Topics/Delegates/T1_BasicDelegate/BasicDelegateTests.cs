@@ -19,22 +19,22 @@ public class BasicDelegateTests
     [Test]
     public void Map_DoublesValues_ReturnsNewArray()
     {
-        var data = new[] {1, 2, 3};
+        var data = new[] { 1, 2, 3 };
         var result = App.Topics.Delegates.T1_BasicDelegate.IntAlgorithms.Map(
             data, x => x * 2);
 
-        Assert.That(result, Is.EqualTo(new[] {2, 4, 6}));
+        Assert.That(result, Is.EqualTo(new[] { 2, 4, 6 }));
         Assert.That(ReferenceEquals(result, data), Is.False, "Should return new array, not modify source");
     }
 
     [Test]
     public void Filter_KeepEven_ReturnsOnlyEven()
     {
-        var data = new[] {-3, -2, -1, 0, 1, 2, 3};
+        var data = new[] { -3, -2, -1, 0, 1, 2, 3 };
         var result = App.Topics.Delegates.T1_BasicDelegate.IntAlgorithms.Filter(
             data, x => x % 2 == 0);
 
-        Assert.That(result, Is.EqualTo(new[] {-2, 0, 2}));
+        Assert.That(result, Is.EqualTo(new[] { -2, 0, 2 }));
     }
 
     [Test]
@@ -48,14 +48,14 @@ public class BasicDelegateTests
     public void Map_DelegateNull_Throws()
     {
         Assert.Throws<ArgumentNullException>(() =>
-            App.Topics.Delegates.T1_BasicDelegate.IntAlgorithms.Map(new[] {1}, null!));
+            App.Topics.Delegates.T1_BasicDelegate.IntAlgorithms.Map(new[] { 1 }, null!));
     }
 
     [Test]
     public void Filter_PredicateNull_Throws()
     {
         Assert.Throws<ArgumentNullException>(() =>
-            App.Topics.Delegates.T1_BasicDelegate.IntAlgorithms.Filter(new[] {1}, null!));
+            App.Topics.Delegates.T1_BasicDelegate.IntAlgorithms.Filter(new[] { 1 }, null!));
     }
 
     [Test]
