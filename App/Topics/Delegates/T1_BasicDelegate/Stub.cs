@@ -57,7 +57,7 @@ public class IntAlgorithms
         {
             if (predicate(source[index]))
             {
-                result2[num++] = index;
+                result2[num++] = source[index];
             }
         }
 
